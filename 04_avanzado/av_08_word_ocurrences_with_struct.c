@@ -128,7 +128,7 @@ int main()
         }
         else
         {
-            // Why i - 1 ? To reverse the "i++" on line 110 and make sure
+            // Why i - 1 ? To reverse the "i++" on line 112 and make sure
             // to increase the counter of the correct word
             my_dict[i - 1].count_st++;
         }
