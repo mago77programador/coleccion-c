@@ -55,7 +55,7 @@ $ ./ejercicio 1 3
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia Unlicense - mira el archivo [LICENSE.md](LICENSE.md) para detalles o consulta este [enlace](https://unlicense.org/).
+Este proyecto está bajo la Licencia Unlicense - mira el archivo [LICENSE](LICENSE) para detalles o consulta este [enlace](https://unlicense.org/).
 
 ## Gracias 🎁
 
