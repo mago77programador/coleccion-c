@@ -1,0 +1,2 @@
+En mis pruebas he usado los archivos "moby_dick.txt" y "pc.txt".
+Puedes probar con tus propios archivos.

@@ -1,0 +1,81 @@
+https://stackoverflow.com/questions/29238323/how-do-i-check-a-palindrome-in-c-while-ignoring-case-sensitivity-and-punctuation
+
+So. Let's do this in steps.
+
+The simplest is_palindrome function:
+This will look very similar to your code. Except that some syntax problems that you have are fixed. Note that s and e point to the first and last character of the string.
+
+bool is_palindrome(const char *phrase, unsigned length) {
+    const char *s = phrase + 0;
+    const char *e = phrase + length - 1;
+
+    while (s < e) {
+        if (*s != *e)
+            return false;
+        s += 1;
+        e -= 1;
+    }
+    return true;
+}
+Let's add lowercase / uppercase comparisons:
+The simplest way to do this is to convert all valid characters to uppercase. It looks like you had this idea as well with your talking about a lower_to_upper() function.
+
+The only problem is, your function has a really odd signature (why is upper an argument?). So, an easy fix to that, is to use the builtin function toupper().
+
+bool is_palindrome(const char *phrase, unsigned length) {
+    const char *s = phrase + 0;
+    const char *e = phrase + length - 1;
+
+    while (s < e) {
+        if (toupper(*s) != toupper(*e))
+            return false;
+        s += 1;
+        e -= 1;
+    }
+    return true;
+}
+What about those other characters (like spaces)
+Now. The last piece is that you want to ignore spaces and punctuation. Rather than wording it that way, it might be better to talk about the characters that we do want to compare. I think that you are looking to only compare alphanumeric characters. These are a-z, A-Z, and 0-9. To test if a character is one of these, we could build a custom function, or we could use the builtin isalnum() to do that:
+
+bool is_palindrome(const char *phrase, unsigned length) {
+    const char *s = phrase + 0;
+    const char *e = phrase + length - 1;
+
+    while (s < e) {
+        if (!isalnum(*s)) {
+            s++;
+        } else if (!isalnum(*e)) {
+            e--;
+        } else if (toupper(*s) == toupper(*e)) {
+            s++;
+            e--;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+Some final thoughts:
+Note that on each pass of the loop, we move either s, e, or both one step. This ensures that we will eventually complete the loop. Our condition of s < e also ensure that once we reach the "middle" of the string, that we finish. I put middle in quotes, because for the string "ab         a", the middle is the second character.
+
+Languages are complicated beasts:
+English has a fairly straightforward encoding in most (all?) systems. But other languages are not always that straightforward. In a comment, chux had a recommendation about this:
+
+A locale than may have a many-to-1 mapping of lower to upper or visa-versa, using round-trip if (tolower(toupper(*s)) != tolower(toupper(*e))) handles that.
+
+I'm personally not as concerned, because I feel that around the same point that we worry about this, we should also worry about how the text is encoded. Is it UTF-8? Is it something else? This is probably beyond your instructors expectations.
+
+Share
+Improve this answer
+Follow
+edited Mar 24, 2015 at 17:50
+answered Mar 24, 2015 at 17:05
+Bill Lynch's user avatar
+Bill Lynch
+80.8k1616 gold badges130130 silver badges175
+
+
+
+[  De Bing Chat] 
+
+En el código que me has enviado, s y e son punteros que apuntan al principio y al final de la cadena, respectivamente. La línea const char *s = phrase + 0; inicializa el puntero s para que apunte al primer carácter de la cadena. La línea const char *e = phrase + length - 1; inicializa el puntero e para que apunte al último carácter de la cadena. La variable length es el número de caracteres en la cadena. La expresión phrase + length - 1 calcula la dirección del último carácter de la cadena. La resta de 1 se debe a que los índices de los caracteres en una cadena comienzan en 0. Espero que esto te ayude a entender el código. Si tienes alguna otra pregunta, no dudes en preguntar.

@@ -1,0 +1,25 @@
+{
+    "Actors": [
+      {
+        "name": "Tom Cruise",
+        "age": 63,
+        "Born At": "Syracuse, NY",
+        "Birthdate": "July 3, 1962",
+        "photo": "https://jsonformatter.org/img/tom-cruise.jpg"
+      },
+      {
+        "name": "Robert Downey Jr.",
+        "age": 57,
+        "Born At": "New York City, NY",
+        "Birthdate": "April 4, 1965",
+        "photo": "https://jsonformatter.org/img/Robert-Downey-Jr.jpg"
+      },
+      {
+        "name": "Robert Anthony De Niro",
+        "age": 80,
+        "Born At": "New York City, NY",
+        "Birthdate": "August 17, 1943",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/2/25/Robert_De_Niro_Cannes_2016_2.jpg"
+      }      
+    ]
+  }  

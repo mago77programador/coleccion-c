@@ -1,0 +1,8 @@
+No sigo el video en que está basado el ejercicio ( https://youtu.be/HEEzZ7fA9Oo?si=nOJHDqeqSpIZxt0y ).
+Si ves el resultado, los dos ejercicios terminan con el mismo resultado. NO HACÍA FALTA el tema del idioma.
+Se introducen líneas de texto por línea de comandos. "Intro" al final de cada línea.
+Para finalizar "Ctrl+Z", "Intro" en Windows. Sustituir "Z" por "D" en Linux.
+Esto hace innecesario usar una palabra "clave" para salir.
+Y en producción habría que avisar al usuario de estas instrucciones.
+Para terminar, con el bloc de notas puedes comprobar que se respetan los acentos y eñes.
+En VSC da la impresión equivocada.

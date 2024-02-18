@@ -1,0 +1,2 @@
+# Compilar
+$ gcc -o av_07_leer_json av_07_leer_json.c cJSON.c
