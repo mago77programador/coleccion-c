@@ -6,9 +6,9 @@ int main(void)
 {
     int points[] = {2, 5, 100, 34, 32};
 
-    int lenght = sizeof(points) / sizeof(points[0]);
+    int length = sizeof(points) / sizeof(points[0]);
 
-    float result = average(points, lenght);
+    float result = average(points, length);
 
     printf("Average: %.3f\n", result);
 }
