@@ -1,3 +1,6 @@
+// El Shell sort es una generalización del ordenamiento
+// por inserción.
+// (https://es.wikipedia.org/wiki/Ordenamiento_Shell)
 #include <stdio.h>
 
 void shell(int v[], int n);

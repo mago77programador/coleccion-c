@@ -17,8 +17,7 @@ typedef struct trienode
 {
     struct trienode *children[NUM_CHARS];
     bool terminal;
-}
-trienode;
+} trienode;
 
 trienode *createnode(void);
 bool trieinsert(trienode **root, char *signedtext);
@@ -28,12 +27,12 @@ bool searchtrie(trienode *root, char *signedtext);
 bool node_has_children(trienode *node);
 trienode *deletestr_rec(trienode *node, unsigned char *text, bool *deleted);
 bool deletestr(trienode **root, char *signedtext);
-void free_trienode(trienode* node);
+void free_trienode(trienode *node);
 
 int main(void)
 {
     trienode *root = NULL;
-    
+
     trieinsert(&root, "COTO");
     trieinsert(&root, "COTORRA");
     trieinsert(&root, "PERA");
@@ -44,11 +43,11 @@ int main(void)
     trieinsert(&root, "VIDA");
 
     printtrie(root);
- 
+
     (searchtrie(root, "COTORRA")) ? printf("Found COTORRA\n") : printf("Not found COTORRA\n");
     (searchtrie(root, "COTO")) ? printf("Found COTO\n") : printf("Not found COTO\n");
     (searchtrie(root, "ARCANO")) ? printf("Found ARCANO\n") : printf("Not found ARCANO\n");
-    
+
     deletestr(&root, "TAZA");
     deletestr(&root, "COTO");
 
@@ -91,7 +90,7 @@ bool trieinsert(trienode **root, char *signedtext)
     }
     if (tmp->terminal)
     {
-        return false;    
+        return false;
     }
     else
     {
@@ -135,7 +134,7 @@ bool searchtrie(trienode *root, char *signedtext)
 {
     unsigned char *text = (unsigned char *)signedtext;
     int length = strlen(signedtext);
-    trienode * tmp = root;
+    trienode *tmp = root;
 
     for (int i = 0; i < length; i++)
     {
@@ -194,7 +193,7 @@ trienode *deletestr_rec(trienode *node, unsigned char *text, bool *deleted)
         free(node);
         node = NULL;
     }
-    
+
     return node;
 }
 
@@ -212,10 +211,10 @@ bool deletestr(trienode **root, char *signedtext)
     return result;
 }
 
-void free_trienode(trienode* node)
+void free_trienode(trienode *node)
 {
     // Free the trienode sequence
-    for(int i=0; i<NUM_CHARS; i++)
+    for (int i = 0; i < NUM_CHARS; i++)
     {
         if (node->children[i] != NULL)
         {

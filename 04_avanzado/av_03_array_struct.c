@@ -9,8 +9,7 @@ typedef struct
     int edad;
     float peso;
     char nombre[TAM];
-}
-Persona;
+} Persona;
 
 void clean_stdin(void);
 
@@ -18,7 +17,7 @@ int main(void)
 {
     Persona bloque_a[ELEM];
 
-    for(int i = 0; i < ELEM; i++)
+    for (int i = 0; i < ELEM; i++)
     {
         printf("Registremos a un vecino del bloque:\n");
         printf("Edad:\n");
@@ -32,7 +31,7 @@ int main(void)
 
     printf("Estos son los datos recopilados:\n");
 
-    for(int i = 0; i < ELEM; i++)
+    for (int i = 0; i < ELEM; i++)
     {
         printf("%s tiene %i años y pesa %.2f kg.\n", bloque_a[i].nombre, bloque_a[i].edad, bloque_a[i].peso);
     }
@@ -46,7 +45,5 @@ void clean_stdin(void)
     do
     {
         c = getchar();
-    }
-    while (c != '\n' && c != EOF);
+    } while (c != '\n' && c != EOF);
 }
-
